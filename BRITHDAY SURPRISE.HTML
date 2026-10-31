@@ -1,0 +1,442 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Deepa Akka ❤️</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+ min-height:100vh;
+ overflow-x:hidden;
+ font-family:Georgia,serif;
+ color:white;
+ text-align:center;
+ background:
+ linear-gradient(to bottom,#172b6470,#ffb77b30,#001b1680),
+ url("https://images.unsplash.com/photo-1448375240586-882707db888b?w=1800")
+ center/cover fixed;
+}
+
+body:before{
+ content:"";
+ position:fixed;
+ inset:0;
+ z-index:0;
+ pointer-events:none;
+ background:linear-gradient(
+  180deg,#ffb16c30 0%,transparent 45%,#001b1670 100%
+ );
+}
+
+#stars,.birds,.butterflies,.sunrise{
+ position:fixed;
+ inset:0;
+ pointer-events:none;
+ overflow:hidden;
+}
+
+.sunrise{z-index:0}
+.sun{
+ position:absolute;
+ width:145px;height:145px;
+ border-radius:50%;
+ left:50%;bottom:18%;
+ transform:translateX(-50%);
+ background:radial-gradient(circle,#fffbd1,#ffda76 55%,#ff974d);
+ box-shadow:0 0 80px 35px #ffbd5a80;
+ animation:sunRise 12s ease-in-out infinite alternate;
+}
+@keyframes sunRise{
+ from{bottom:-3%}
+ to{bottom:23%}
+}
+
+.star{
+ position:absolute;color:#fff;
+ animation:twinkle 2s infinite alternate;
+}
+@keyframes twinkle{
+ from{opacity:.2;transform:scale(.7)}
+ to{opacity:1;transform:scale(1.4)}
+}
+
+.bird,.butterfly{
+ position:absolute;
+ font-size:32px;
+ animation:fly 16s linear infinite;
+ filter:drop-shadow(0 0 8px #fff);
+}
+@keyframes fly{
+ 0%{transform:translate(-100px,0)}
+ 25%{transform:translate(25vw,-45px)}
+ 50%{transform:translate(55vw,25px)}
+ 75%{transform:translate(80vw,-50px)}
+ 100%{transform:translate(115vw,0)}
+}
+.b1{top:12%;animation-delay:0s}
+.b2{top:27%;animation-delay:5s}
+.b3{top:42%;animation-delay:9s}
+.b4{top:60%;animation-delay:3s}
+.f1{top:20%;animation-delay:2s}
+.f2{top:43%;animation-delay:6s}
+.f3{top:68%;animation-delay:9s}
+.f4{top:32%;animation-delay:12s}
+
+.container{
+ position:relative;
+ z-index:5;
+ width:92%;
+ max-width:560px;
+ margin:35px auto;
+ padding:30px 22px;
+ border:1px solid #ffffff80;
+ border-radius:28px;
+ background:#061b19c9;
+ backdrop-filter:blur(9px);
+ box-shadow:0 0 40px #ffb6d055;
+}
+
+h1{
+ color:#ffc4da;
+ font-size:clamp(30px,7vw,43px);
+ text-shadow:0 0 20px #ff6fa5;
+ margin:15px 0;
+}
+h2{color:#ffe6a5;margin:17px 0}
+p{font-size:17px;line-height:1.85;margin:15px 0}
+
+.heart{
+ font-size:50px;
+ animation:heartbeat 1s infinite;
+}
+@keyframes heartbeat{50%{transform:scale(1.25)}}
+
+.divider{
+ color:#ffd28a;
+ font-size:23px;
+ margin:15px;
+}
+
+button{
+ border:0;
+ border-radius:35px;
+ padding:14px 25px;
+ margin:15px 5px;
+ background:linear-gradient(45deg,#ff347d,#ff9fbd);
+ color:white;
+ font-size:17px;
+ font-weight:bold;
+ cursor:pointer;
+ box-shadow:0 0 20px #ff75a5;
+ transition:.3s;
+}
+button:hover{transform:scale(1.06)}
+
+.cake-area{margin:40px auto 25px}
+.cake{
+ position:relative;
+ width:210px;
+ height:160px;
+ margin:35px auto 10px;
+}
+
+.half{
+ position:absolute;
+ inset:0;
+ transition:1.5s ease;
+}
+.left{clip-path:inset(0 50% 0 0)}
+.right{clip-path:inset(0 0 0 50%)}
+
+.layer{
+ position:absolute;
+ left:15px;
+ width:180px;
+ height:42px;
+ border-radius:12px;
+ background:linear-gradient(#ffb6c1,#f04483);
+ box-shadow:inset 0 -7px #d72a68;
+}
+.layer.bottom{bottom:15px}
+.layer.middle{
+ bottom:55px;
+ background:linear-gradient(#ffe5a7,#ff9b43);
+ box-shadow:inset 0 -7px #db7d2d;
+}
+.icing{
+ position:absolute;
+ left:15px;
+ top:48px;
+ width:180px;
+ height:20px;
+ border-radius:50%;
+ background:#fff0f5;
+}
+
+.plate{
+ position:absolute;
+ bottom:0;
+ left:-10px;
+ width:230px;
+ height:16px;
+ border-radius:50%;
+ background:linear-gradient(white,#aaa);
+}
+
+.candle{
+ position:absolute;
+ top:12px;
+ left:101px;
+ z-index:4;
+ width:10px;
+ height:40px;
+ background:repeating-linear-gradient(
+ 45deg,white,white 5px,#ff4081 5px,#ff4081 10px);
+}
+.flame{
+ position:absolute;
+ top:-19px;
+ left:-3px;
+ width:16px;
+ height:20px;
+ background:orange;
+ border-radius:50%;
+ box-shadow:0 0 20px yellow;
+ animation:flicker .5s infinite alternate;
+}
+@keyframes flicker{to{transform:scale(.7)}}
+
+.cake.cut .left{transform:translateX(-35px) rotate(-12deg)}
+.cake.cut .right{transform:translateX(35px) rotate(12deg)}
+.cake.cut .flame{opacity:0}
+
+#surprise{display:none;animation:appear 2s}
+@keyframes appear{
+ from{opacity:0;transform:translateY(25px)}
+ to{opacity:1;transform:translateY(0)}
+}
+
+.confetti{
+ position:fixed;
+ top:-30px;
+ z-index:20;
+ pointer-events:none;
+ animation:fall 5s linear forwards;
+}
+@keyframes fall{
+ to{transform:translateY(110vh) rotate(720deg);opacity:0}
+}
+
+.footer{
+ color:#ffd5e4;
+ font-size:14px;
+ line-height:2;
+ margin-top:25px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="sunrise">
+ <div class="sun"></div>
+</div>
+
+<div id="stars"></div>
+
+<div class="birds">
+ <div class="bird b1">🕊️</div>
+ <div class="bird b2">🦜</div>
+ <div class="bird b3">🕊️</div>
+ <div class="bird b4">🦜</div>
+</div>
+
+<div class="butterflies">
+ <div class="butterfly f1">🦋</div>
+ <div class="butterfly f2">🦋</div>
+ <div class="butterfly f3">🦋</div>
+ <div class="butterfly f4">🦋</div>
+</div>
+
+<div class="container">
+
+<div class="heart">💖</div>
+
+<h2>🌹 A Special Day For 🌹</h2>
+
+<h1>DEEPA AKKA</h1>
+
+<h1>🎂 Happy Birthday! 🎂</h1>
+
+<div class="divider">🦚 ✨ 🦋 ✨ 🕊️</div>
+
+<p>
+Some people enter our lives and make
+everything more beautiful.
+You are one of those special people, Akka.
+❤️
+</p>
+
+<p>
+You are not just my senior,
+you are a wonderful sister,
+a person I respect and someone
+I always wish happiness for.
+</p>
+
+<div class="divider">🌸 🌷 🌸</div>
+
+<h2>ನನ್ನ ಪ್ರೀತಿಯ ದೀಪಾ ಅಕ್ಕಾ ❤️</h2>
+
+<p>
+ನಿನ್ನ ಜೀವನದಲ್ಲಿ ಸದಾ ಸಂತೋಷ ತುಂಬಿರಲಿ.
+ನಿನ್ನ ಪ್ರತಿಯೊಂದು ಕನಸು ನನಸಾಗಲಿ.
+ನಿನ್ನ ಮುಖದಲ್ಲಿ ನಗು ಎಂದಿಗೂ ಮಾಸದಿರಲಿ.
+ನೀನು ಜೀವನದಲ್ಲಿ ಅಂದುಕೊಂಡಿದ್ದೆಲ್ಲವೂ
+ನಿನಗೆ ಸಿಗಲಿ.
+</p>
+
+<p>
+ನಿನ್ನ ಬದುಕು ಈ ಪ್ರಕೃತಿಯಂತೆ ಸುಂದರವಾಗಿರಲಿ.
+ಪ್ರತಿ ಬೆಳಗು ಹೊಸ ಭರವಸೆ ತರಲಿ.
+ಪ್ರತಿ ದಿನವೂ ನಿನಗೆ ಹೊಸ ಸಂತೋಷ ನೀಡಲಿ.
+🥰
+</p>
+
+<div class="divider">🌅 ✨ 🌅</div>
+
+<h2>🎂 Birthday Cake Celebration 🎂</h2>
+
+<p>Deepa Akka, Make a beautiful wish! 🌟</p>
+
+<div class="cake-area">
+
+<div class="cake" id="cake">
+
+ <div class="half left">
+  <div class="layer bottom"></div>
+  <div class="layer middle"></div>
+  <div class="icing"></div>
+ </div>
+
+ <div class="half right">
+  <div class="layer bottom"></div>
+  <div class="layer middle"></div>
+  <div class="icing"></div>
+ </div>
+
+ <div class="candle">
+  <div class="flame"></div>
+ </div>
+
+ <div class="plate"></div>
+
+</div>
+
+<button id="cutButton" onclick="cutCake()">
+ 🔪 CUT THE CAKE ❤️
+</button>
+
+</div>
+
+<div id="surprise">
+
+<h1>🎉 SURPRISE! 🎉</h1>
+
+<div class="heart">💗</div>
+
+<h2>Dear Deepa Akka ❤️</h2>
+
+<p>
+Even though we may not be connected by blood,
+the love, respect and care between us
+make this bond truly special.
+</p>
+
+<p>
+No matter how much time passes
+or where life takes us,
+you will always have a special place
+in my heart.
+</p>
+
+<h2>ಒಂದು ಮಾತು ಅಕ್ಕಾ ❤️</h2>
+
+<p>
+ನೀನು ಯಾವಾಗಲೂ ಖುಷಿಯಾಗಿರಬೇಕು.
+ನಿನ್ನ ಕಷ್ಟಗಳೆಲ್ಲ ದೂರವಾಗಲಿ.
+ನಿನ್ನ ಜೀವನದಲ್ಲಿ ಯಶಸ್ಸು ಮತ್ತು ನೆಮ್ಮದಿ
+ಎಂದೆಂದಿಗೂ ಇರಲಿ.
+</p>
+
+<h1>LOVE YOU DEEPA AKKA! ❤️</h1>
+
+<h2>Stay Blessed Forever! 🌹</h2>
+
+<div style="font-size:65px">🎂🎊🥳</div>
+
+<h1>HAPPY BIRTHDAY! 💖</h1>
+
+</div>
+
+<div class="divider">🦚 🦋 🕊️ 🦜</div>
+
+<div class="footer">
+ A Beautiful Bond Beyond Words ♾️<br>
+ Forever Brother & Sister ❤️<br>
+ With Love, Your Brother 🥰
+</div>
+
+</div>
+
+<script>
+
+// Twinkling stars
+for(let i=0;i<130;i++){
+ let s=document.createElement("span");
+ s.className="star";
+ s.innerHTML="✦";
+ s.style.left=Math.random()*100+"%";
+ s.style.top=Math.random()*100+"%";
+ s.style.fontSize=(Math.random()*15+5)+"px";
+ s.style.animationDelay=Math.random()*3+"s";
+ document.getElementById("stars").appendChild(s);
+}
+
+// Cake cutting celebration
+function cutCake(){
+
+ const cake=document.getElementById("cake");
+ const msg=document.getElementById("surprise");
+ const btn=document.getElementById("cutButton");
+
+ if(cake.classList.contains("cut"))return;
+
+ cake.classList.add("cut");
+ msg.style.display="block";
+ btn.innerHTML="❤️ CAKE CUT SUCCESSFULLY!";
+ btn.disabled=true;
+
+ const emojis=["🎉","🎊","✨","💖","🌹","🥳","❤️","⭐"];
+
+ for(let i=0;i<120;i++){
+  let c=document.createElement("div");
+  c.className="confetti";
+  c.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];
+  c.style.left=Math.random()*100+"%";
+  c.style.fontSize=(Math.random()*20+12)+"px";
+  c.style.animationDelay=Math.random()*2+"s";
+  document.body.appendChild(c);
+  setTimeout(()=>c.remove(),6000);
+ }
+}
+
+</script>
+
+</body>
+</html>
